@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Exercícios</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        h1 { text-align: center; }
+        .exercise { margin-bottom: 20px; padding: 10px; border: 1px solid #ccc; border-radius: 5px; }
+        label { display: block; margin-bottom: 5px; }
+        input, select { margin-bottom: 10px; padding: 5px; width: 100%; box-sizing: border-box; }
+        button { background-color: #4CAF50; color: white; padding: 10px; border: none; cursor: pointer; width: 100%; }
+        button:hover { background-color: #45a049; }
+    </style>
+</head>
+<body>
+    <h1>Calculadora de Exercícios</h1>
+
+    <div class="exercise">
+        <h2>A.1 - Resolver Expressão (a + b) / c</h2>
+        <button onclick="resolverExpressao()">Calcular</button>
+    </div>
+
+    <div class="exercise">
+        <h2>A.2 - Calcular Tempo de Viagem</h2>
+        <button onclick="calcularTempoViagem()">Calcular</button>
+    </div>
+
+    <div class="exercise">
+        <h2>A.3 - Calcular Reajuste Salarial</h2>
+        <button onclick="calcularReajusteSalarial()">Calcular</button>
+    </div>
+
+    <div class="exercise">
+        <h2>A.4 - Calcular Pontos de Futebol</h2>
+        <button onclick="calcularPontosFutebol()">Calcular</button>
+    </div>
+
+    <div class="exercise">
+        <h2>A.5 - Mostrar Antecessor e Sucessor</h2>
+        <button onclick="mostrarAntecessorSucessor()">Calcular</button>
+    </div>
+
+    <div class="exercise">
+        <h2>A.6 - Calcular Tempo de Voo</h2>
+        <button onclick="calcularTempoVoo()">Calcular</button>
+    </div>
+
+    <div class="exercise">
+        <h2>A.7 - Calcular Viagens de Caminhão para Laranjas</h2>
+        <button onclick="calcularViagensLaranjas()">Calcular</button>
+    </div>
+
+    <div class="exercise">
+        <h2>A.8 - Calcular Área e Volume de um Cilindro</h2>
+        <button onclick="calcularCilindro()">Calcular</button>
+    </div>
+
+    <div class="exercise">
+        <h2>A.9 - Calcular Aumento de 5% no Preço</h2>
+        <button onclick="calcularAumentoPreco()">Calcular</button>
+    </div>
+
+    <div class="exercise">
+        <h2>A.10 - Calcular Participação de Eleitores</h2>
+        <button onclick="calcularParticipacaoEleitores()">Calcular</button>
+    </div>
+
+    <div class="exercise">
+        <h2>A.11 - Calcular Densidade de Barra de Calcário</h2>
+        <button onclick="calcularDensidade()">Calcular</button>
+    </div>
+
+    <div class="exercise">
+        <h2>A.12 - Calcular Resto da Divisão</h2>
+        <button onclick="calcularRestoDivisao()">Calcular</button>
+    </div>
+
+    <div class="exercise">
+        <h2>A.13 - Calcular Quantidade e Custo de Pedra Mineira</h2>
+        <button onclick="calcularPedraMineira()">Calcular</button>
+    </div>
+
+    <div class="exercise">
+        <h2>A.14 - Somar Dois Valores Inteiros</h2>
+        <button onclick="somarValores()">Calcular</button>
+    </div>
+
+    <div class="exercise">
+        <h2>A.16 - Multiplicar Dois Valores Inteiros</h2>
+        <button onclick="multiplicarValores()">Calcular</button>
+    </div>
+
+    <div class="exercise">
+        <h2>A.17 - Calcular o Quadrado de um Valor</h2>
+        <button onclick="calcularQuadrado()">Calcular</button>
+    </div>
+
+    <div class="exercise">
+        <h2>A.18 - Calcular o Cubo de um Valor</h2>
+        <button onclick="calcularCubo()">Calcular</button>
+    </div>
+
+    <div class="exercise">
+        <h2>A.19 - Calcular a Metade de um Valor</h2>
+        <button onclick="calcularMetade()">Calcular</button>
+    </div>
+
+    <div class="exercise">
+        <h2>A.20 - Calcular Um Treze Avos de um Valor</h2>
+        <button onclick="calcularTrezeAvos()">Calcular</button>
+    </div>
+
+    <div class="exercise">
+        <h2>A.21 - Calcular Volume de um Paralelepípedo</h2>
+        <button onclick="calcularVolumeParalelepipedo()">Calcular</button>
+    </div>
+
+    <div class="exercise">
+        <h2>A.22 - Calcular Área de um Círculo</h2>
+        <button onclick="calcularAreaCirculo()">Calcular</button>
+    </div>
+
+    <div class="exercise">
+        <h2>A.23 - Calcular Área de um Triângulo</h2>
+        <button onclick="calcularAreaTriangulo()">Calcular</button>
+    </div>
+
+    <div class="exercise">
+        <h2>A.24 - Converter Polegadas para Milímetros</h2>
+        <button onclick="converterPolegadasMilimetros()">Calcular</button>
+    </div>
+
+    <div class="exercise">
+        <h2>A.25 - Calcular Média Geométrica</h2>
+        <button onclick="calcularMediaGeometrica()">Calcular</button>
+    </div>
+    
+    <div class="exercise">
+        <h2>A.26 - Calcular Desconto em Mercadoria</h2>
+        <button onclick="calcularDescontoMercadoria()">Calcular</button>
+    </div>
+    
+    <div class="exercise">
+        <h2>A.27 - Converter Fahrenheit para Celsius</h2>
+        <button onclick="converterFahrenheitCelsius()">Calcular</button>
+    </div>
+    
+    <div class="exercise">
+        <h2>A.28 - Calcular IMC</h2>
+        <button onclick="calcularIMC()">Calcular</button>
+    </div>
+    
+    <div class="exercise">
+        <h2>A.29 - Calcular Área do Retângulo</h2>
+        <button onclick="calcularAreaRetangulo()">Calcular</button>
+    </div>
+    
+    <div class="exercise">
+        <h2>A.30 - Calcular Raiz Quadrada</h2>
+        <button onclick="calcularRaizQuadrada()">Calcular</button>
+    </div>
+    
+    <div class="exercise">
+        <h2>A.31 - Converter Libras para Quilos</h2>
+        <button onclick="converterLibrasQuilos()">Calcular</button>
+    </div>
+    <script src="styles.js"></script>
+</body>
+</html>

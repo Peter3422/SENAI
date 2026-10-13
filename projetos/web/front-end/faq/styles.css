@@ -1,0 +1,94 @@
+/* Estilos gerais */
+body {
+    background-image: url('z0yKCpm-galaxy-wallpaper-1920x1080.jpg'); /* Caminho da imagem */
+    color: #E0E0E0; /* Cor do texto */
+    font-family: 'Arial', sans-serif; /* Fonte mais moderna */
+    line-height: 1.6; /* Aumenta o espaçamento entre linhas */
+    margin: 0; /* Remove margens padrão */
+    padding: 0 20px; /* Adiciona preenchimento lateral */
+}
+
+
+/* Estilos de navegação */
+nav {
+    background-color: rgba(44, 44, 44, 0.8); /* Cor de fundo escura e semi-transparente */
+    overflow: hidden; /* Limpa flutuações */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.8); /* Sombra mais intensa para a navegação */
+    border-radius: 8px; /* Bordas arredondadas */
+    margin: 20px 0; /* Margem superior e inferior */
+}
+
+nav ul {
+    list-style-type: none; /* Remove marcadores da lista */
+    padding: 0; /* Remove preenchimento */
+    margin: 0; /* Remove margem */
+}
+
+nav ul li {
+    float: left; /* Alinha os itens à esquerda */
+}
+
+nav ul li a {
+    display: block; /* Faz o link ocupar todo o espaço do item */
+    color: #E0E0E0; /* Cor do texto clara */
+    text-align: center; /* Centraliza o texto */
+    padding: 14px 20px; /* Preenchimento interno */
+    text-decoration: none; /* Remove sublinhado */
+    transition: background-color 0.3s ease; /* Transição suave ao passar o mouse */
+}
+
+nav ul li a:hover {
+    background-color: rgba(60, 60, 60, 0.9); /* Cor de fundo ao passar o mouse */
+    border-radius: 4px; /* Bordas arredondadas ao passar o mouse */
+}
+
+/* Estilos de detalhes */
+details {
+    background-color: rgba(44, 44, 44, 0.8); /* Fundo dos detalhes */
+    border: 1px solid rgba(68, 68, 68, 0.7); /* Borda dos detalhes */
+    padding: 10px; /* Preenchimento interno */
+    margin: 10px 0; /* Margem entre detalhes */
+    border-radius: 8px; /* Bordas arredondadas */
+    transition: background-color 0.3s ease; /* Transição suave ao interagir */
+}
+
+details:hover {
+    background-color: rgba(60, 60, 60, 0.9); /* Cor de fundo ao passar o mouse */
+}
+
+summary {
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    color: #E0E0E0; /* Cor do texto do resumo */
+    font-weight: bold; /* Texto em negrito */
+    padding: 10px; /* Preenchimento interno */
+    border-radius: 4px; /* Bordas arredondadas */
+}
+
+summary:hover {
+    color: #B0B0B0; /* Cor ao passar o mouse no resumo */
+}
+
+/* Estilos de cabeçalho */
+h1 {
+    color: #76C7C0; /* Cor do título */
+    text-align: center; /* Centraliza o título */
+    margin: 20px 0; /* Margem superior e inferior */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); /* Sombra para o título */
+}
+
+/* Estilos de parágrafo */
+p {
+    margin: 10px 0; /* Margem entre parágrafos */
+    text-align: justify; /* Justifica o texto */
+}
+
+/* Estilos de links */
+a {
+    color: #76C7C0; /* Cor dos links */
+    text-decoration: none; /* Remove sublinhado */
+}
+
+a:hover {
+    color: #B0B0B0; /* Cor ao passar o mouse nos links */
+    text-decoration: underline; /* Sublinha ao passar o mouse */
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="styles.js"></script>
+    <title>Jogo da velha</title>
+</head>
+
+<body>
+   <DIV ID="conteudo">
+      <IMG SRC="img/Aula3_senai.jpg" ID="logoSenai" />
+      <DIV ID="formulario">
+         <INPUT TYPE="text" ID="nomeJ1" PLACEHOLDER="Nome do Jogador 1" ONKEYUP="liberaStart()" />
+         <INPUT TYPE="text" ID="nomeJ2" PLACEHOLDER="Nome do Jogador 2" ONKEYUP="liberaStart()" />
+         <P CLASS="aviso">O nome deve conter no mínimo 3 letras!!!</P>
+         <INPUT TYPE="button" ID="btStart" VALUE="Começar!" DISABLED ONCLICK="start();" />
+      </DIV>
+      <DIV ID="tabuleiro" STYLE="display:none">
+         <TABLE ALIGN="center">
+            <TR>
+               <TD ID="t1">
+                  <IMG SRC="img/Aula3_branco.jpg" ID="1" ONMOUSEDOWN="selecionar(this.id)"
+                     ONMOUSEOVER="trocaImagemOver(this.id)" ONMOUSEUP="verificaVencedor()"
+                     ONMOUSEOUT="trocaImagemOut(this.id)" />
+               </TD>
+               <TD ID="t2"><IMG SRC="img/Aula3_branco.jpg" ID="2" ONMOUSEDOWN="selecionar(this.id)"
+                     ONMOUSEOVER="trocaImagemOver(this.id)" ONMOUSEUP="verificaVencedor()"
+                     ONMOUSEOUT="trocaImagemOut(this.id)" />
+               </TD>
+               <TD ID="t3"><IMG SRC="img/Aula3_branco.jpg" ID="3" ONMOUSEDOWN="selecionar(this.id)"
+                     ONMOUSEOVER="trocaImagemOver(this.id)" ONMOUSEUP="verificaVencedor()"
+                     ONMOUSEOUT="trocaImagemOut(this.id)" />
+               </TD>
+            </TR>
+            <TR>
+               <TD ID="t4"><IMG SRC="img/Aula3_branco.jpg" ID="4" ONMOUSEDOWN="selecionar(this.id)"
+                     ONMOUSEOVER="trocaImagemOver(this.id)" ONMOUSEUP="verificaVencedor()"
+                     ONMOUSEOUT="trocaImagemOut(this.id)" />
+               </TD>
+               <TD ID="t5"><IMG SRC="img/Aula3_branco.jpg" ID="5" ONMOUSEDOWN="selecionar(this.id)"
+                     ONMOUSEOVER="trocaImagemOver(this.id)" ONMOUSEUP="verificaVencedor()"
+                     ONMOUSEOUT="trocaImagemOut(this.id)" />
+               </TD>
+               <TD ID="t6"><IMG SRC="img/Aula3_branco.jpg" ID="6" ONMOUSEDOWN="selecionar(this.id)"
+                     ONMOUSEOVER="trocaImagemOver(this.id)" ONMOUSEUP="verificaVencedor()"
+                     ONMOUSEOUT="trocaImagemOut(this.id)" />
+               </TD>
+            </TR>
+            <TR>
+               <TD ID="t7"><IMG SRC="img/Aula3_branco.jpg" ID="7" ONMOUSEDOWN="selecionar(this.id)"
+                     ONMOUSEOVER="trocaImagemOver(this.id)" ONMOUSEUP="verificaVencedor()"
+                     ONMOUSEOUT="trocaImagemOut(this.id)" />
+               </TD>
+               <TD ID="t8"><IMG SRC="img/Aula3_branco.jpg" ID="8" ONMOUSEDOWN="selecionar(this.id)"
+                     ONMOUSEOVER="trocaImagemOver(this.id)" ONMOUSEUP="verificaVencedor()"
+                     ONMOUSEOUT="trocaImagemOut(this.id)" />
+               </TD>
+               <TD ID="t9"><IMG SRC="img/Aula3_branco.jpg" ID="9" ONMOUSEDOWN="selecionar(this.id)"
+                     ONMOUSEOVER="trocaImagemOver(this.id)" ONMOUSEUP="verificaVencedor()"
+                     ONMOUSEOUT="trocaImagemOut(this.id)" />
+               </TD>
+            </TR>
+         </TABLE>
+      </DIV>
+      <DIV ID="placar" STYLE="display:none">
+            <TABLE>
+               <TD><IMG CLASS="imgPlacar" SRC="img/Aula3_livro.jpg"></TD>
+               <TD>
+                  <P ID="PlacarNJ1"></P>
+               </TD>
+               <TD>
+                  <P ID="PontosJ1">00</P>
+               </TD>
+
+               <TD>X</TD>
+
+               <TD>
+                  <P ID="PontosJ2">00</P>
+               </TD>
+               <TD>
+                  <P ID="PlacarNJ2"></P>
+               </TD>
+               <TD><IMG CLASS="imgPlacar" SRC="img/Aula3_monitor.jpg"></TD>
+            </TABLE>
+      </DIV>
+   </DIV>
+</body>
+
+</html>

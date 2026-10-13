@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Registro de RPG</string>
+    <string name="nome_personagem">Nome do Personagem</string>
+    <string name="classe">Classe</string>
+    <string name="ataque">Ataque</string>
+    <string name="defesa">Defesa</string>
+    <string name="mana">Mana</string>
+    <string name="nivel">Nível</string>
+    <string name="xp">XP</string>
+    <string name="gravar">Gravar</string>
+    <string name="limpar">Limpar</string>
+    <string name="confirm_delete">Deseja realmente excluir %1$s?</string>
+    <string name="deletion_success">Personagem excluído!</string>
+    <string name="error_deletion">Erro ao excluir personagem</string>
+</resources>

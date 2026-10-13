@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="styles.js"></script>
+    <title>Jogo da velha</title>
+</head>
+<body>
+    <div id="conteudo">
+        <img src="img/senai.jpg" id="logoSenai">
+        <div id="formulario">
+            <input type="text" id="nomeJ1" placeholder="Nome do jogador 1" oninput="liberaStart()">
+            <input type="text" id="nomeJ2" placeholder="Nome do jogador 2" oninput="liberaStart()">
+            <h1 class="aviso">O nome deve conter no mínimo 3 letras!!!</h1>
+            <input type="button" id="btStart" value="Começar!" disabled onclick="start();">
+        </div>
+        <div id="tabuleiro" style="display: none">
+            <table>
+                <tr>
+                    <td id="t1"><img src="img/branco.jpg" id="1"></td>
+                    <td id="t2"><img src="img/branco.jpg" id="2"></td>
+                    <td id="t3"><img src="img/branco.jpg" id="3"></td>
+                </tr>
+                <tr>
+                    <td id="t4"><img src="img/branco.jpg" id="4"></td>
+                    <td id="t5"><img src="img/branco.jpg" id="5"></td>
+                    <td id="t6"><img src="img/branco.jpg" id="6"></td>
+                </tr>
+                <tr>
+                    <td id="t7"><img src="img/branco.jpg" id="7"></td>
+                    <td id="t8"><img src="img/branco.jpg" id="8"></td>
+                    <td id="t9"><img src="img/branco.jpg" id="9"></td>
+                </tr>
+            </table>
+        </div>
+        <div id="placar">
+            <table>
+                <td><img src="img/livro2.jpg"></td>
+                <td><p id="PlacarNJ1"></p></td>
+                <td></td>
+
+                <td></td>
+
+                <td></td>
+                <td><p id="PlacarNJ2"></p></td>
+                <td><img src="img/monitor2.jpg"></td>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

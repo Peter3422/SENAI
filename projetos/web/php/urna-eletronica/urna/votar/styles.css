@@ -1,0 +1,117 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #181818; /* Cor de fundo escura */
+}
+
+.urna {
+    background-color: #dbd5c983; /* Mantém a cor original da urna */
+    padding: 30px;
+    display: flex; /* Mantém a exibição lado a lado */
+    box-shadow: 6px -40px 2px #d1ccc16e; /* Sombra original */
+    border-radius: 10px;
+}
+
+.tela {
+    width: 500px; /* Largura da tela */
+    height: 320px; /* Altura da tela */
+    background: linear-gradient(to right, #e8e8e8, #c1c1c1); /* Mantém o gradiente original */
+    border: 2px solid #555; /* Borda mais escura */
+    display: flex;
+    flex-direction: column; /* Organiza conteúdo da tela em coluna */
+}
+
+.divisao1 {
+    flex: 1; /* Ocupa espaço disponível */
+}
+
+.divisao2 {
+    justify-content: center; /* Centraliza conteúdo */
+    height: 50px; /* Altura da divisão inferior */
+    font-size: 14px; /* Tamanho da fonte */
+    border-top: 2px solid #000; /* Borda superior */
+    padding-left: 10px; /* Espaçamento interno */
+}
+
+.teclado {
+    background-color: #403a3a; /* Cor de fundo do teclado */
+    padding: 20px; /* Espaçamento interno */
+    margin-left: 20px; /* Espaço entre a tela e o teclado */
+    display: flex; /* Exibe os botões em coluna */
+    flex-direction: column; /* Organiza os botões em colunas */
+}
+
+.linha {
+    display: flex; /* Alinha os botões na horizontal */
+    justify-content: center; /* Centraliza os botões */
+    margin-bottom: 10px; /* Espaçamento entre as linhas de botões */
+}
+
+.btn {
+    display: flex; /* Permite centralizar texto dentro do botão */
+    justify-content: center;
+    align-items: center;
+    background-color: #000000; /* Cor de fundo dos botões */
+    width: 70px; /* Largura padrão dos botões */
+    height: 50px; /* Altura dos botões */
+    color: #fff; /* Cor do texto dos botões */
+    box-shadow: 3px 3px 0px #555; /* Sombra dos botões */
+    cursor: pointer; /* Cursor de ponteiro ao passar sobre os botões */
+}
+
+.btn:hover {
+   background-color: #333333; /* Cor ao passar o mouse sobre os botões */
+}
+
+.teclado-botao-corrige {
+   color: #000;
+   background-color: #f09046; /* Cor do botão Corrigir */
+}
+
+.teclado-botao-confirma {
+   background-color: #48c079; /* Cor do botão Confirmar */
+   width: 90px; /* Largura maior para o botão Confirmar */
+}
+
+.voltar {
+   position: fixed; /* Posição fixa no canto inferior direito da tela */
+   bottom: 20px;
+   right: 20px;
+   color: #007BFF; /* Azul padrão para links */
+   text-decoration: none;
+   background-color: transparent;
+   border-radius: 5px;
+   padding: 10px;
+}
+
+.voltar:hover {
+   background-color:#0056b3;/* Cor ao passar o mouse sobre o botão Voltar*/
+}
+
+/* Responsividade para telas menores */
+@media screen and (max-width :900px) {
+   .urna {
+       padding: 30px;
+       flex-direction: column; /* Muda para coluna em telas pequenas */
+       align-items: center; /* Centraliza os itens em coluna */
+   }
+
+   .tela {
+       width: 100%; /* Largura total em telas pequenas */
+       height:auto ;/* Altura automática em telas pequenas*/
+   }
+
+   .teclado {
+       margin-left :0 ;/* Remove margem esquerda em telas pequenas*/
+       margin-top :10 ;/* Adiciona margem superior em telas pequenas*/
+   }
+}
+
+.teclado-botaob {
+   color:#000 ;
+   background-color:#ffffff ;/* Cor do botão Branco*/
+}

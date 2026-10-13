@@ -1,0 +1,85 @@
+body {
+    background-color: rgba(255, 0, 0, 0.507);
+    height: 100vh; 
+    display: flex; 
+    align-items: center; 
+    flex-direction: column; 
+}
+
+#logoSenai {
+    width: 45vw;
+    border-top-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border: 0.5vh solid #000;
+    margin-top: 2vw;
+}
+
+#conteudo {
+    text-align: center;
+}
+
+#formulario input {
+    border-radius: 0.8vw;
+    font-size: 4vh;
+    width: 20vw;
+    margin: 1vw;  
+}
+
+#tabuleiro {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    margin-top: 2vw;
+}
+
+#tabuleiro table {
+    border-collapse: collapse; 
+}
+
+#tabuleiro img {
+    width: 15vw;
+    height: 23vh;
+}
+
+#t1 {
+    border-bottom: 0.8vw solid white;
+    border-right: 0.8vw solid white;
+}
+#t2 {
+    border-bottom: 0.8vw solid white;
+    border-right: 0.8vw solid white;
+    border-left: 0.8vw solid white;
+}
+#t3 {
+    border-bottom: 0.8vw solid white;
+    border-left: 0.8vw solid white;
+}
+#t4 {
+    border-bottom: 0.8vw solid white;
+    border-right: 0.8vw solid white;
+    border-top: 0.8vw solid white;
+}
+#t5 {
+    border-bottom: 0.8vw solid white;
+    border-right: 0.8vw solid white;
+    border-left: 0.8vw solid white;
+    border-top: 0.8vw solid white;
+}
+#t6 {
+    border-bottom: 0.8vw solid white;
+    border-left: 0.8vw solid white;
+    border-top: 0.8vw solid white;
+}
+#t7 {
+    border-top: 0.8vw solid white;
+    border-right: 0.8vw solid white;
+}
+#t8 {
+    border-top: 0.8vw solid white;
+    border-right: 0.8vw solid white;
+    border-left: 0.8vw solid white;
+}
+#t9 {
+    border-top: 0.8vw solid white;
+    border-left: 0.8vw solid white;
+}

@@ -1,0 +1,341 @@
+<HTML>
+
+<HEAD>
+   <TITLE>Jogo da Velha</TITLE>
+   <META CHARSET="utf-8" />
+   <STYLE>
+      BODY {
+         background-color: rgba(255, 0, 0, 0.50);
+      }
+
+      #logoSenai {
+         width: 40vw;
+         border-top-left-radius: 5vh;
+         border-bottom-right-radius: 5vh;
+         border: 0.5vh solid #000000;
+      }
+
+      #conteudo {
+         text-align: center;
+      }
+
+      #formulario input {
+         border-radius: 0.8vw;
+         font-size: 4vh;
+         width: 20vw;
+         margin-top: 1vw;
+      }
+
+      #tabuleiro img {
+         width: 15vw;
+         height: 23vh;
+      }
+
+      #t1 {
+         border-bottom: 0.5vw solid white;
+         border-right: 0.5vw solid white;
+      }
+
+      #t2 {
+         border-bottom: 0.5vw solid white;
+         border-right: 0.5vw solid white;
+         border-left: 0.5vw solid white;
+      }
+
+      #t3 {
+         border-bottom: 0.5vw solid white;
+         border-left: 0.5vw solid white;
+      }
+
+      #t4 {
+         border-top: 0.5vw solid white;
+         border-bottom: 0.5vw solid white;
+         border-right: 0.5vw solid white;
+      }
+
+      #t5 {
+         border-top: 0.5vw solid white;
+         border-bottom: 0.5vw solid white;
+         border-right: 0.5vw solid white;
+         border-left: 0.5vw solid white;
+      }
+
+      #t6 {
+         border-top: 0.5vw solid white;
+         border-bottom: 0.5vw solid white;
+         border-left: 0.5vw solid white;
+      }
+
+      #t7 {
+         border-top: 0.5vw solid white;
+         border-right: 0.5vw solid white;
+      }
+
+      #t8 {
+         border-top: 0.5vw solid white;
+         border-right: 0.5vw solid white;
+         border-left: 0.5vw solid white;
+      }
+
+      #t9 {
+         border-top: 0.5vw solid white;
+         border-left: 0.5vw solid white;
+      }
+
+      #tabuleiro {
+         margin-top: 1vw;
+      }
+
+      .imgPlacar {
+         height: 7vh;
+      }
+
+      #placar {
+         position: fixed;
+         bottom: 0px;
+         left: 0px;
+         width: 100%;
+         background-color: rgba(0, 0, 80, 0.3);
+         font-family: arial;
+      }
+
+      #PlacarNJ1,
+      #PlacarNJ2 {
+         width: 15vw;
+         text-align: center;
+      }
+
+      td {
+         font-size: 2vw;
+      }
+   </STYLE>
+</HEAD>
+
+<BODY>
+   <DIV ID="conteudo">
+      <IMG SRC="Aula3_senai.jpg" ID="logoSenai" />
+      <DIV ID="formulario">
+         <INPUT TYPE="text" ID="nomeJ1" PLACEHOLDER="Nome do Jogador 1" ONKEYUP="liberaStart()" />
+         <INPUT TYPE="text" ID="nomeJ2" PLACEHOLDER="Nome do Jogador 2" ONKEYUP="liberaStart()" />
+         <P CLASS="aviso">O nome deve conter no mínimo 3 letras!!!</P>
+         <INPUT TYPE="button" ID="btStart" VALUE="Começar!" DISABLED ONCLICK="start();" />
+      </DIV>
+      <DIV ID="tabuleiro" STYLE="display:none">
+         <TABLE ALIGN="center">
+            <TR>
+               <TD ID="t1">
+                  <IMG SRC="Aula3_branco.jpg" ID="1" ONMOUSEDOWN="selecionar(this.id)"
+                     ONMOUSEOVER="trocaImagemOver(this.id)" ONMOUSEUP="verificaVencedor()"
+                     ONMOUSEOUT="trocaImagemOut(this.id)" />
+               </TD>
+               <TD ID="t2"><IMG SRC="Aula3_branco.jpg" ID="2" ONMOUSEDOWN="selecionar(this.id)"
+                     ONMOUSEOVER="trocaImagemOver(this.id)" ONMOUSEUP="verificaVencedor()"
+                     ONMOUSEOUT="trocaImagemOut(this.id)" />
+               </TD>
+               <TD ID="t3"><IMG SRC="Aula3_branco.jpg" ID="3" ONMOUSEDOWN="selecionar(this.id)"
+                     ONMOUSEOVER="trocaImagemOver(this.id)" ONMOUSEUP="verificaVencedor()"
+                     ONMOUSEOUT="trocaImagemOut(this.id)" />
+               </TD>
+            </TR>
+            <TR>
+               <TD ID="t4"><IMG SRC="Aula3_branco.jpg" ID="4" ONMOUSEDOWN="selecionar(this.id)"
+                     ONMOUSEOVER="trocaImagemOver(this.id)" ONMOUSEUP="verificaVencedor()"
+                     ONMOUSEOUT="trocaImagemOut(this.id)" />
+               </TD>
+               <TD ID="t5"><IMG SRC="Aula3_branco.jpg" ID="5" ONMOUSEDOWN="selecionar(this.id)"
+                     ONMOUSEOVER="trocaImagemOver(this.id)" ONMOUSEUP="verificaVencedor()"
+                     ONMOUSEOUT="trocaImagemOut(this.id)" />
+               </TD>
+               <TD ID="t6"><IMG SRC="Aula3_branco.jpg" ID="6" ONMOUSEDOWN="selecionar(this.id)"
+                     ONMOUSEOVER="trocaImagemOver(this.id)" ONMOUSEUP="verificaVencedor()"
+                     ONMOUSEOUT="trocaImagemOut(this.id)" />
+               </TD>
+            </TR>
+            <TR>
+               <TD ID="t7"><IMG SRC="Aula3_branco.jpg" ID="7" ONMOUSEDOWN="selecionar(this.id)"
+                     ONMOUSEOVER="trocaImagemOver(this.id)" ONMOUSEUP="verificaVencedor()"
+                     ONMOUSEOUT="trocaImagemOut(this.id)" />
+               </TD>
+               <TD ID="t8"><IMG SRC="Aula3_branco.jpg" ID="8" ONMOUSEDOWN="selecionar(this.id)"
+                     ONMOUSEOVER="trocaImagemOver(this.id)" ONMOUSEUP="verificaVencedor()"
+                     ONMOUSEOUT="trocaImagemOut(this.id)" />
+               </TD>
+               <TD ID="t9"><IMG SRC="Aula3_branco.jpg" ID="9" ONMOUSEDOWN="selecionar(this.id)"
+                     ONMOUSEOVER="trocaImagemOver(this.id)" ONMOUSEUP="verificaVencedor()"
+                     ONMOUSEOUT="trocaImagemOut(this.id)" />
+               </TD>
+            </TR>
+         </TABLE>
+      </DIV>
+      <DIV ID="placar" STYLE="display:none">
+         <CENTER>
+            <TABLE>
+               <TD><IMG CLASS="imgPlacar" SRC="Aula3_livro.jpg"></TD>
+               <TD>
+                  <P ID="PlacarNJ1"></P>
+               </TD>
+               <TD>
+                  <P ID="PontosJ1">00</P>
+               </TD>
+
+               <TD>X</TD>
+
+               <TD>
+                  <P ID="PontosJ2">00</P>
+               </TD>
+               <TD>
+                  <P ID="PlacarNJ2"></P>
+               </TD>
+               <TD><IMG CLASS="imgPlacar" SRC="Aula3_monitor.jpg"></TD>
+               <td><img src="Aula3_reiniciar.png" alt="reiniciar" style="height: 7vh;" onclick="reiniciar()"></td>
+            </TABLE>
+         </CENTER>
+      </DIV>
+   </DIV>
+</BODY>
+
+</HTML>
+<SCRIPT>
+   function liberaStart() {
+      if (document.getElementById("nomeJ1").value.length >= 3 &&
+         document.getElementById("nomeJ2").value.length >= 3) {
+         document.getElementById("btStart").disabled = false;
+      } else {
+         document.getElementById("btStart").disabled = true;
+      }
+   }
+
+   function trocaImagemOver(id) {
+      if (document.getElementById(id).src.slice(-16) == "Aula3_branco.jpg")
+         document.getElementById(id).src = "Aula3_cinza.jpg";
+   }
+
+   function trocaImagemOut(id) {
+      if (document.getElementById(id).src.slice(-15) == "Aula3_cinza.jpg")
+         document.getElementById(id).src = "Aula3_branco.jpg";
+   }
+
+   // Controle de qual jogador está ativo
+   jogadorAtivo = "J1";
+
+   function selecionar(id) {
+      if (finalJogo == 0) {
+         if (document.getElementById(id).src.slice(-15) == "Aula3_cinza.jpg") {
+            if (jogadorAtivo == "J1") {
+               document.getElementById(id).src = "Aula3_livro.jpg";
+               jogadorAtivo = "J2";
+            } else {
+               document.getElementById(id).src = "Aula3_monitor.jpg";
+               jogadorAtivo = "J1";
+            }
+         }
+      }
+   }
+
+   PontosJ1 = 0;
+   PontosJ2 = 0;
+   finalJogo = 0;
+
+   function verificaVencedor() {
+      if (document.getElementById("1").src == document.getElementById("2").src &&
+         document.getElementById("1").src == document.getElementById("3").src &&
+         document.getElementById("1").src.slice(-16) != "Aula3_branco.jpg") {
+         if (document.getElementById("1").src.slice(-15) == "Aula3_livro.jpg")
+            PontosJ1++;
+         else
+            PontosJ2++;
+         document.getElementById("PontosJ1").innerHTML = PontosJ1;
+         document.getElementById("PontosJ2").innerHTML = PontosJ2;
+         finalJogo = 1;
+      } else if (document.getElementById("4").src == document.getElementById("5").src &&
+         document.getElementById("4").src == document.getElementById("6").src &&
+         document.getElementById("4").src.slice(-16) != "Aula3_branco.jpg") {
+         if (document.getElementById("4").src.slice(-15) == "Aula3_livro.jpg")
+            PontosJ1++;
+         else
+            PontosJ2++;
+         document.getElementById("PontosJ1").innerHTML = PontosJ1;
+         document.getElementById("PontosJ2").innerHTML = PontosJ2;
+         finalJogo = 1;
+      } else if (document.getElementById("7").src == document.getElementById("8").src &&
+         document.getElementById("7").src == document.getElementById("9").src &&
+         document.getElementById("7").src.slice(-16) != "Aula3_branco.jpg") {
+         if (document.getElementById("7").src.slice(-15) == "Aula3_livro.jpg")
+            PontosJ1++;
+         else
+            PontosJ2++;
+         document.getElementById("PontosJ1").innerHTML = PontosJ1;
+         document.getElementById("PontosJ2").innerHTML = PontosJ2;
+         finalJogo = 1;
+      } else if (document.getElementById("1").src == document.getElementById("4").src &&
+         document.getElementById("1").src == document.getElementById("7").src &&
+         document.getElementById("1").src.slice(-16) != "Aula3_branco.jpg") {
+         if (document.getElementById("1").src.slice(-15) == "Aula3_livro.jpg")
+            PontosJ1++;
+         else
+            PontosJ2++;
+         document.getElementById("PontosJ1").innerHTML = PontosJ1;
+         document.getElementById("PontosJ2").innerHTML = PontosJ2;
+         finalJogo = 1;
+      } else if (document.getElementById("2").src == document.getElementById("5").src &&
+         document.getElementById("2").src == document.getElementById("8").src &&
+         document.getElementById("2").src.slice(-16) != "Aula3_branco.jpg") {
+         if (document.getElementById("2").src.slice(-15) == "Aula3_livro.jpg")
+            PontosJ1++;
+         else
+            PontosJ2++;
+         document.getElementById("PontosJ1").innerHTML = PontosJ1;
+         document.getElementById("PontosJ2").innerHTML = PontosJ2;
+         finalJogo = 1;
+      } else if (document.getElementById("3").src == document.getElementById("6").src &&
+         document.getElementById("3").src == document.getElementById("9").src &&
+         document.getElementById("3").src.slice(-16) != "Aula3_branco.jpg") {
+         if (document.getElementById("3").src.slice(-15) == "Aula3_livro.jpg")
+            PontosJ1++;
+         else
+            PontosJ2++;
+         document.getElementById("PontosJ1").innerHTML = PontosJ1;
+         document.getElementById("PontosJ2").innerHTML = PontosJ2;
+         finalJogo = 1;
+      } else if (document.getElementById("1").src == document.getElementById("5").src &&
+         document.getElementById("1").src == document.getElementById("9").src &&
+         document.getElementById("1").src.slice(-16) != "Aula3_branco.jpg") {
+         if (document.getElementById("1").src.slice(-15) == "Aula3_livro.jpg")
+            PontosJ1++;
+         else
+            PontosJ2++;
+         document.getElementById("PontosJ1").innerHTML = PontosJ1;
+         document.getElementById("PontosJ2").innerHTML = PontosJ2;
+         finalJogo = 1;
+      } else if (document.getElementById("3").src == document.getElementById("5").src &&
+         document.getElementById("3").src == document.getElementById("7").src &&
+         document.getElementById("3").src.slice(-16) != "Aula3_branco.jpg") {
+         if (document.getElementById("3").src.slice(-15) == "Aula3_livro.jpg")
+            PontosJ1++;
+         else
+            PontosJ2++;
+         document.getElementById("PontosJ1").innerHTML = PontosJ1;
+         document.getElementById("PontosJ2").innerHTML = PontosJ2;
+         finalJogo = 1;
+      }
+   }
+
+   function start() {
+      document.getElementById("formulario").style.display = "none";
+      document.getElementById("tabuleiro").style.display = "block";
+      document.getElementById("placar").style.display = "block";
+      document.getElementById("logoSenai").style.width = "15vw";
+
+      document.getElementById("PlacarNJ1").innerHTML =
+         document.getElementById("nomeJ1").value;
+
+      document.getElementById("PlacarNJ2").innerHTML =
+         document.getElementById("nomeJ2").value;
+   }
+
+   function reiniciar() {
+      for (i = 1; 1 < 10; i++)
+         document.getElementById(i).src = "Aula3_branco.jpg"
+      finalJogo = 0;
+   }
+</SCRIPT>

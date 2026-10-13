@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Adivinhe o número!</title>
+</head>
+<style>
+   body {
+      background-color: black;
+      color: white;
+   }
+</style>
+<body>
+   <h1>Adivinhe o número!</h1>
+   <label for="numeroDig">Digite um Número: </label><br>
+   <input type="text" name="numeroDig" id="numeroDig">
+   <input type="button" value="Adivinhar!" onclick="adivinhar()">
+   <p id="tentativaAtual"></p>
+   <p id="tentativasAnt"></p>
+   <p id="numTentativas"></p>
+   <script src="styles.js"></script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<HTML>
+
+<HEAD>
+   <STYLE>
+   /* Configurações gerais */
+   body {
+      display: flex;
+      justify-content: center;
+      padding: 0;
+      margin: 0;
+      height: 100vh;
+      background-color: #f0f0f0; /* Adicionei uma cor de fundo */
+   }
+
+   /* Estilos para o jogo */
+   #jogo {
+      width: 100vh;
+      height: 80%;
+      padding: 0;
+      align-items: center;
+   }
+
+   #titulo {
+      margin-top: 0;
+      font-size: 5vh;
+      text-align: center; /* Substituí o CENTER por text-align */
+   }
+
+   /* Estilos para as peças */
+   .peca {
+      float: left;
+      width: 49vh;
+      height: 49%;
+      opacity: 0.2;
+      margin: 0.3%;
+      transition: opacity 0.2s; /* Adicionei uma transição suave */
+   }
+
+   #peca1 {
+      border-top-left-radius: 100%;
+      background-color: #FF0000;
+   }
+
+   #peca2 {
+      border-top-right-radius: 100%;
+      background-color: #FFFF00;
+   }
+
+   #peca3 {
+      border-bottom-left-radius: 100%;
+      background-color: #00FF00;
+   }
+
+   #peca4 {
+      border-bottom-right-radius: 100%;
+      background-color: #0000FF;
+   }
+
+   /* Estilo para a fase */
+   #fase {
+      font-size: 2vh;
+      margin-top: 20px;
+      text-align: center; /* Centralizei o texto */
+   }
+</STYLE>
+
+   </STYLE>
+   <META CHARSET="utf-8">
+   <TITLE>Genius</TITLE>
+</HEAD>
+
+<BODY>
+   <DIV ID="jogo">
+      <H1 ID="titulo">
+         <CENTER>Jogo Genius do Barreto</CENTER>
+      </H1>
+      <DIV ID="peca1" CLASS="peca" ONCLICK=""></DIV>
+      <DIV ID="peca2" CLASS="peca" ONCLICK=""></DIV>
+      <DIV ID="peca3" CLASS="peca" ONCLICK=""></DIV>
+      <DIV ID="peca4" CLASS="peca" ONCLICK=""></DIV>
+      <div id="fase">Fase: 0</div>
+   </DIV>
+</BODY>
+
+</HTML>
+<SCRIPT>
+   //inicializar o jogo (carrega a página e ele já começa)
+   window.onload = sorteiaLuz;
+
+   var listaLuz = [];  // array das luzes
+   var faseJogador = 0 // controla em que ponto da lista está
+
+   function sorteiaLuz() {
+      //Math.random(); gera um número float aleatório entre 0 e 1
+      // usando o Math.ceil, eu arredondo pra cima e gero número entre 1 e 4
+      listaLuz.push(Math.ceil(Math.random() * 4));
+      setTimeout(() => { piscaLuzes(); }, 10);
+   }
+
+   function piscaLuzes() {
+      for (let indice = 0; indice < listaLuz.length; indice++) {
+         setTimeout(() => {
+            document.getElementById("peca" + listaLuz[indice]).style.opacity = 1;
+         }, (indice * 750) + 250);
+
+         setTimeout(() => {
+            document.getElementById("peca" + listaLuz[indice]).style.opacity = 0.2;
+         }, (indice * 750) + 750);
+      }
+
+      setTimeout(() => {
+         for (let indice = 1; indice <= 4; indice++)
+            document.getElementById("peca" + indice).setAttribute('ONCLICK', 'jogar(this.id)');
+      }, (listaLuz.length * 750));
+      document.getElementById("fase").innerText = "Fase: " + listaLuz.length;
+   }
+
+   function jogar(peca) {
+      setTimeout(() => { document.getElementById(peca).style.opacity = 1 }, 0);
+      setTimeout(() => { document.getElementById(peca).style.opacity = 0.2 }, 200);
+      
+      // errou a peça clicada
+      if (peca != ("peca" + listaLuz[faseJogador])) {
+         document.getElementById(peca).onclick = "";
+         alert("Você errou");
+         //atrada em 300ms o erro pra dar tempo de piscar a tela
+         setTimeout(() => {
+            listaLuz = [];
+            faseJogador = 0;
+            setTimeout(() => { sorteiaLuz() }, 1000);
+            return;
+         }, 300);
+      } else if (listaLuz.length <= faseJogador + 1) {
+         //terminou e acertou todas as luzes daquela fase
+         faseJogador = 0;
+         //desabilita o onClick no momento que está piscando as luzes
+         for (let indice = 1; indice <= 4; indice++) {
+            document.getElementById("peca" + indice).onclick = "";
+         }
+         //sorteia a próxima luz
+         setTimeout(() => { sorteiaLuz() }, 1000);
+         return;
+      }
+      faseJogador++;
+   }
+</SCRIPT>

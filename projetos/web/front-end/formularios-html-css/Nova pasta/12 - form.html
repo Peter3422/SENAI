@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<title>HTML e CSS para Formulários</title>
+	<link rel="stylesheet" type="text/css" href="12 - Form.css" media="screen" />
+
+</head>
+
+<body>
+
+<h1 class="titulo">Formulário de Cadastro</h1>
+
+<form action="#" method="post">
+	
+	<fieldset class="grupo"> <legend> Nome e Sobrenome </legend>
+
+		<div class="campo">
+			<label for="nome">Nome</label>
+			<input type="text" id="nome" name="nome" style="width: 30em" value="" />
+		</div>
+
+		<div class="campo">
+			<label for="snome">Sobrenome</label>
+			<input type="text" id="snome" name="snome" style="width: 30em" value="" />
+		</div>
+
+	</fieldset>	
+
+	<p>
+
+	<fieldset class="grupo"> <legend>Genero</legend>
+
+		<div class="campo"> 
+
+			<label class="checkbox">
+				<input type="radio" name="sexo" value="masculino"> Masculino
+			</label>
+			
+			<label class="checkbox">
+				<input type="radio" name="sexo" value="feminino"> Feminino
+			</label>
+
+		</div>
+
+    </fieldset>
+
+	<p>
+
+	<fieldset class="grupo"> <legend>E-mail e Telefone</legend>
+
+		<div class="campo">
+			<label for="email">E-mail</label>
+			<input type="text" id="email" name="email" style="width: 30em" value="" />
+		</div>
+
+		<div class="campo">
+			<label for="telefone">Telefone</label>
+			<input type="text" id="telefone" name="telefone" style="width: 30em"  value="" />
+		</div>
+
+	</fieldset>
+
+	<p>
+	
+	<fieldset class="grupo"> <legend>Cidade e Estado</legend>
+		<div class="campo">
+			<label for="cidade">Cidade</label>
+			<input type="text" id="cidade" name="cidade" style="width: 20em" value="" />
+		</div>
+
+		<div class="campo">
+			<label for="estado">Estado</label>
+			<select name="estado" id="estado">
+				<option value="">--</option>
+				<option value="PR">PR</option>
+				<option value="SP">SP</option>
+			</select>
+		</div>
+	</fieldset>
+
+	<p>
+	
+	<fieldset class="grupo"> <legend>Mensagem</legend>
+		<div class="campo">
+			<label for="mensagem">Mensagem</label>
+			<textarea rows="6" style="width: 41em" id="mensagem" name="mensagem"></textarea>
+		</div>
+
+		<div class="campo">
+			<label>Newsletter</label>
+
+			<label class="checkbox">
+				<input type="checkbox" name="newsletter" value="1"> Gostaria de receber a Newsletter da empresa
+			</label>
+
+		</div>
+		<div class="campo">
+			<button class="botao submit" type="submit" name="submit">Enviar</button>
+		</div>
+	</fieldset>
+
+</form>
+
+</body>
+</html>

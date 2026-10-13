@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Valor Total com IPI</title>
+    <style>
+        #voltar-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #cat {
+            position: fixed;
+            width: 50px; /* Ajuste o tamanho conforme necessário */
+            height: 50px; /* Ajuste o tamanho conforme necessário */
+            pointer-events: none; /* Para que o gato não interfira nos eventos do mouse */
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculadora de Valor Total com IPI</h1>
+    <form id="ipiForm">
+        <label for="ipi">Percentagem do IPI:</label>
+        <input type="number" id="ipi" step="0.01" required><br><br>
+        
+        <label for="codigo1">Código da Peça 1:</label>
+        <input type="text" id="codigo1" required><br><br>
+        
+        <label for="valor1">Valor Unitário da Peça 1:</label>
+        <input type="number" id="valor1" step="0.01" required><br><br>
+        
+        <label for="quantidade1">Quantidade de Peças 1:</label>
+        <input type="number" id="quantidade1" required><br><br>
+        
+        <label for="codigo2">Código da Peça 2:</label>
+        <input type="text" id="codigo2" required><br><br>
+        
+        <label for="valor2">Valor Unitário da Peça 2:</label>
+        <input type="number" id="valor2" step="0.01" required><br><br>
+        
+        <label for="quantidade2">Quantidade de Peças 2:</label>
+        <input type="number" id="quantidade2" required><br><br>
+        
+        <button type="button" onclick="calcularValorTotal()">Calcular Valor Total</button>
+    </form>
+    <div id="resultado"></div>
+
+    <button id="voltar-btn" onclick="voltar()">Voltar</button>
+
+    <script src="styles.js"></script>
+    <img id="cat" src="/JS/vecteezy_realistic-cute-cat-cartoon-style-digital-artwork_21830103.png" alt="Gato seguindo o mouse">
+    <script>
+        function voltar() {
+            window.history.back();
+        }
+
+        const cat = document.getElementById('cat');
+        let mouseX = 0;
+        let mouseY = 0;
+
+        // Atualiza a posição do mouse
+        document.addEventListener('mousemove', (event) => {
+            mouseX = event.clientX;
+            mouseY = event.clientY;
+        });
+
+        function animate() {
+            // Posição atual do gato
+            const catX = parseFloat(cat.style.left) || 0;
+            const catY = parseFloat(cat.style.top) || 0;
+
+            // Cálculo da diferença e suavização do movimento
+            const dx = (mouseX - catX) * 0.05; // Reduzido para 0.05 para um movimento mais suave
+            const dy = (mouseY - catY) * 0.05; // Reduzido para 0.05 para um movimento mais suave
+
+            // Atualiza a posição do gato
+            cat.style.left = `${catX + dx}px`;
+            cat.style.top = `${catY + dy}px`;
+
+            requestAnimationFrame(animate); // Chama a função novamente para continuar a animação
+        }
+
+        animate(); // Inicia a animação
+    </script>
+</body>
+</html>

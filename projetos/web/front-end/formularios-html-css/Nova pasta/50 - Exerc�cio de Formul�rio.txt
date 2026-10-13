@@ -1,0 +1,90 @@
+A empresa FJI Tech, onde você trabalha, precisa de que você desenvolva o seguinte formulário em HTML, que contenha os seguintes campos:
+
+- Nome Completo
+
+- Data de Nascimento
+
+- Gênero:
+  -> Feminino
+  -> Masculino
+
+- Filiação:
+  -> Nome Completo da Mãe
+  -> Nome Completo do Pai
+
+- Natural de:
+  -> Município
+  -> Estado/UF (caixa de combinação contendo a sigla de TODOS os estados Brasileiros - em ordem alfabética)
+  - Nacionalidade
+
+- E-mails
+  -> Seu melhor e-mail
+  -> Email_2
+
+- Endereço: 
+  -> Logradouro (Rua, Avenida, Rodovia, Alameda, etc.)
+  -> Endereço
+  -> Número
+  -> Bairro
+  -> Complemento (Casa, Apartamento.)
+  -> Referência
+  -> Cidade
+  -> Estado
+  -> CEP
+
+- Telefone para contato: 
+  -> Residencial 
+  -> Celular
+  -> Comercial
+  -> Recado
+  
+  - NrTelefone
+
+- RG: 
+  -> Nº 
+  -> Data de Expedição ( dd/mm/aaaa ) 
+  -> Sigla do Orgão Expeditor
+  -> Estado
+
+- CPF:
+  -> Nº
+  -> Data de Expedição ( dd/mm/aaaa )
+
+- Título Eleitoral:
+  -> Nº
+  -> Zona Eleitoral
+  -> Seção Eleitoral
+
+- Carteira Habilitação: 
+  -> Nº 
+  -> Data de Validade ( dd/mm/aaaa )
+  -> Categoria (Pesquisar as classificacoes existentes atualmente)
+
+- Carteira de Trabalho: 
+  -> Nº 
+  -> Série
+
+- Estado Civil:
+  -> Solteiro
+  -> Casado
+  -> Divorciado
+  -> Viúvo
+  -> União Estável
+  -> Outros
+
+- Nome do cônjuge
+
+- Deficiente Físico:
+  -> Sim
+  -> Não
+  -> Qual (descrição) ?
+
+- Tipo Sanguíneo:
+  -> O
+  -> A
+  -> B
+  -> AB
+
+O formulário também deverá ter os botões:
+- Enviar
+- Limpar

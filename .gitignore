@@ -1,0 +1,23 @@
+# IDEs e arquivos locais
+.idea/
+.vscode/
+*.iml
+local.properties
+
+# Gradle e builds Android
+.gradle/
+**/build/
+**/out/
+*.apk
+*.aab
+
+# Configuração local e segredos
+.env
+.env.*
+!.env.example
+*.keystore
+*.jks
+
+# Sistema operacional
+.DS_Store
+Thumbs.db

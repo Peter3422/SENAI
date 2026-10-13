@@ -1,0 +1,65 @@
+/* styles.css */
+body {
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('img.jpg'); /* Adicionando a imagem de fundo */
+    background-position: center; /* Centraliza a imagem */
+    color: white; /* Texto branco */
+}
+
+.carta {
+    background-color: #1e1e1e; /* Fundo da carta */
+    border: 2px solid #444; /* Borda mais clara */
+    border-radius: 10px;
+    box-shadow: 10px 6px 20px rgba(255, 255, 255, 0.623); /* Sombra mais intensa */
+    padding: 20px;
+    width: 400px;
+    text-align: center;
+    opacity: 95%;
+}
+
+.imagem-circular {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #c5c5c5; /* Borda mais clara */
+}
+
+.atributos {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ataque, .defesa {
+    width: 45%;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 5px;
+    margin: 5px 0;
+    border: 1px solid #444; /* Borda mais clara */
+    border-radius: 7px;
+    background-color: #333; /* Fundo dos inputs */
+    color: white; /* Texto dos inputs */
+}
+
+.submit-button {
+    background-color: #4caf4fda; /* Verde */
+    color: rgba(255, 255, 255, 0.795); /* Texto branco */
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.submit-button:hover {
+    background-color: #45a049d0; /* Verde mais escuro ao passar o mouse */
+}

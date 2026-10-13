@@ -1,0 +1,28 @@
+<html>
+<head>
+    <title>JavaScript - Operações com variavel</title>
+
+<script language="JavaScript">
+    function numeros(){
+        tecla= event.keyCode;
+        if(tecla >= 65 && tecla <= 90){
+            return true
+        }
+        else if(tecla >= 97 && tecla <= 122 ){
+            return true
+        } 
+         else{
+            return false
+        }
+    }
+    </script>
+</head>
+<body>
+    
+    <form method="post" name="formulario">
+        <p align="center">Números
+        <input type="text" name="num" size="20" onkeypress="return numeros();"></p>
+    </form>
+
+</body>
+</html>

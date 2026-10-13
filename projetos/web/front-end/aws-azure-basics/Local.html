@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa do Local</title>
+    <style>
+        
+        body {
+            background-color: #0B3B0B;
+            text-align: center; 
+        }
+    
+        h1 {
+            color: #F0F8FF;
+        }
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+        #map {
+            width: 75vw;
+            height: 75vw;
+            max-width: 75vh;
+            max-height: 75vh;
+            border: 2px solid #333;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
+        .button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div id="map">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3703.1548210297005!2d-47.3863663245733!3d-22.75789533256696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c89c1a7b1f8403%3A0x1256688080ce4127!2sEscola%20Senai%20Alvares%20Romi%20-%20Santa%20B%C3%A1rbara%20d&#39;Oeste!5e1!3m2!1spt-BR!2sbr!4v1730685992723!5m2!1spt-BR!2sbr"
+            width="100%"
+            height="100%"
+            style="border:2;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+    <a href="http://localhost/CSS.html" class="button">Ir para o Site</a>
+</body>
+</html>

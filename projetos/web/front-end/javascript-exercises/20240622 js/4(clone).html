@@ -1,0 +1,34 @@
+<html>
+<head>
+    <title>JavaScript - Tabuada</title>
+
+    <script language="javascript">
+        // Entrada
+
+            while(true){
+                var valor = parseInt(prompt("Digite a tabuada desejada", ""));
+                var y = parseInt(prompt("De qual número começa?", ""));
+                var k = parseInt(prompt("De qual número termina?", ""));                
+                    if (!isNaN(y) && !isNaN(k) && !isNaN(valor)) {
+                    break;
+                    } 
+                    else {
+                    alert('Por favor, insira apenas números.');
+                    }
+            }
+        // Processamento
+        for (x = y; x <= k; x++) {
+            // Saída
+            if (x % 2 == 0) {
+                document.write("<br><b>" + valor + " x " + x + " = " + valor * x + "</b>");
+            }
+            else{
+             document.write("<br><i>" + valor + " x " + x + " = " + valor * x + "</i>");   
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

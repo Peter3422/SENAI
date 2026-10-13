@@ -1,0 +1,66 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212; /* Fundo escuro */
+    color: white; /* Texto branco */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.resultado-container {
+    background-color: #1e1e1e; /* Fundo da caixa de resultado */
+    border: 2px solid #444; /* Borda mais clara */
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Sombra para destaque */
+    padding: 30px;
+    text-align: center;
+    width: 400px; /* Largura da caixa */
+}
+
+h1, h2, h3 {
+    margin: 10px 0;
+}
+
+h1 {
+    font-size: 28px;
+}
+
+h2 {
+    font-size: 22px;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+.resultado-valor {
+    color: #4caf50; /* Verde para os resultados */
+    font-weight: bold;
+}
+
+ul {
+    list-style-type: none; /* Remove as bolinhas */
+    padding: 0; /* Remove o padding padrão */
+    margin: 0; /* Remove a margem padrão */
+}
+
+li {
+    margin: 5px 0;
+}
+
+.back-button {
+    background-color: #4caf4f; /* Verde */
+    color: white; /* Texto branco */
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: #45a049; /* Verde mais escuro ao passar o mouse */
+}

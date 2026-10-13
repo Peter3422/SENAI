@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table {
+        display: inline-table;
+        padding: 10px;
+    }
+</style>
+
+<body>
+    <table id="tabNum0" onclick="pinta(this.id)"></table>
+    <table id="tabNum1" onclick="pinta(this.id)"></table>
+    <table id="tabNum2" onclick="pinta(this.id)"></table>
+    <input type="button" onclick="adivinhar()" value="Adivivinhar!"><br>
+    <table id="tabNum3" onclick="pinta(this.id)"></table>
+    <table id="tabNum4" onclick="pinta(this.id)"></table>
+    <table id="tabNum5" onclick="pinta(this.id)"></table>
+
+    <h1>
+        <p id="resposta"></p>
+    </h1>
+</body>
+
+</html>
+
+<script>
+    // Executa a função após o carregamento completo da página
+    window.onload = montaTabelas;
+
+    function montaTabelas() {
+        // Array para armazenar os números das tabelas
+        var numeros = [];
+
+        // Gerar 6 arrays, um para cada tabela
+        for (let indice = 0; indice <= 5; indice++) {
+            numeros.push([]);
+        }
+
+        // Preencher os arrays com os números de 1 a 63
+        for (let contNum = 1; contNum <= 63; contNum++) {
+            let restoDiv = contNum; // Inicializador
+
+            // Dividir o número conforme as potências de 2
+            for (let cont2 = 5; cont2 >= 0; cont2--) {
+                if (Math.floor(restoDiv / Math.pow(2, cont2)) == 1) {
+                    numeros[cont2].push(contNum);
+                }
+                restoDiv = restoDiv % Math.pow(2, cont2);
+            }
+        }
+
+        // Gerar o conteúdo das tabelas
+        for (let iTabela = 0; iTabela <= 5; iTabela++) {
+            let linhaTabela = "";
+
+            // Criar linhas para cada tabela
+            for (let iPosicao = 0; iPosicao < 32; iPosicao++) {
+                linhaTabela += "<td>" + numeros[iTabela][iPosicao] + "</td>";
+
+                // Adiciona nova linha a cada 4 posições
+                if (iPosicao % 4 == 3) {
+                    linhaTabela += "</tr><tr>";
+                }
+            }
+
+            // Preenche o conteúdo de cada tabela
+            document.getElementById("tabNum" + iTabela).innerHTML = "<tr>" + linhaTabela + "</tr>";
+        }
+    }
+    function pinta(tabela) {
+        var tabelaElement = document.getElementById(tabela); // Corrigido para tabelaElement
+        if (tabelaElement.style.color == "") {
+            tabelaElement.style.color = "#ff0000"; // Corrigido para atribuição
+        } else {
+            tabelaElement.style.color = ""; // Corrigido para atribuição
+        }
+    }
+    function adivinhar() {
+        var numero = 0;
+        for (let iTabela = 0; iTabela <= 5; iTabela++) {
+            if (document.getElementById("tabNum" + iTabela).style.color != "") {
+                numero += Math.pow(2, iTabela);
+            }
+        }
+        document.getElementById("resposta").innerHTML = "O número escolhido foi: " + numero; // Fora do loop
+    }
+
+</script>
